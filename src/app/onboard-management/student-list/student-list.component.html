@@ -1,0 +1,16 @@
+<div ngbDropdown class="d-inline-block marg_10">
+  <button class="btn btn-outline-primary" id="displayOption" ngbDropdownToggle>Displaying {{selectedDisplayOptionText}}
+    Students<br />Click To Change...</button>
+  <div ngbDropdownMenu>
+    <button ngbDropdownItem (click)="setDisplayOption(ListDisplayOptions.All)">All</button>
+    <button ngbDropdownItem (click)="setDisplayOption(ListDisplayOptions.Domestic)">Domestic</button>
+    <button ngbDropdownItem (click)="setDisplayOption(ListDisplayOptions.International)">International</button>
+  </div>
+</div>
+<input type="text" [(ngModel)]="searchByName"
+  class="form-control float-right col-md-2 marg_10" id="searchStudent" placeholder="Search Student...">
+<br />
+
+<ng-container *ngFor="let student of students | filterStudents : selectedDisplayOption : searchByName ">
+  <app-student-tile [student]='student' (listChanged)="loadStudents()"></app-student-tile>
+</ng-container>

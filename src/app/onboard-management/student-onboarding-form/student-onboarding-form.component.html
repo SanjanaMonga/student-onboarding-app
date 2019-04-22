@@ -1,0 +1,55 @@
+<div class="overflowscroll">
+    <form class="padd_10" #onboardingForm="ngForm" (ngSubmit)="onSubmit(onboardingForm)">
+        <div class="form-group col-md-6 inline-display">
+            <label for="studentName">Student Name*</label>
+            <input required type="text" [(ngModel)]="student.name" name="name" #name="ngModel" class="form-control"
+                id="studentName" placeholder="Enter Student Name" [readonly]="disabled">
+        </div>
+        <div class="form-group col-md-6 inline-display">
+            <label for="category">Category</label>
+            <select class="form-control" id="category" [disabled]="disabled" [(ngModel)]="student.category"
+                name="category" (change)="loadDocument()">
+                <option [selected]="student?.category == StudentType.Domestic" [value]="StudentType.Domestic">
+                    Domestic</option>
+                <option [selected]="student?.category == StudentType.International" [value]="StudentType.International">
+                    International</option>
+            </select>
+        </div>
+        <div class="form-group col-md-12">
+            <label>Document List (Documents marked with * are mandatory)</label>
+            <br/>
+            <ng-container *ngFor="let doc of student.listOfDocs; index as i">
+                <div class="form-group col-md-3 inline-display">
+                    <input class="form-check-input" [disabled]="disabled" type="checkbox" [(ngModel)]="doc.isProvided" name="{{doc.name}}" [value]="doc.name">
+                    <label class="form-check-label">
+                        {{doc.name}}<span *ngIf="doc.mandatory">*</span></label>
+                </div>
+            </ng-container>
+            <br/>
+            <label *ngIf="docListIncomplete" class="error">Please provide all required documents.</label>
+        </div>
+        <div class="form-group col-md-6 inline-display">
+            <label for="studentDOB" placeholder="Student DOB">Student DOB</label>
+            <input type="date" [readonly]="disabled" class="form-control" id="studentDOB" [(ngModel)]="student.dob"
+                name="dob">
+        </div>
+        <div class="form-group col-md-6 inline-display">
+            <label for="fatherName">Father's Name</label>
+            <input type="name" [readonly]="disabled" class="form-control" [(ngModel)]="student.father" name="father"
+                id="fatherName" placeholder="Enter Father's Name">
+        </div>
+        <div class="form-group col-md-6 inline-display">
+            <label for="motherName">Mother's Name</label>
+            <input type="name" [readonly]="disabled" class="form-control" id="studentName" [(ngModel)]="student.mother"
+                name="mother" placeholder="Enter Mother's Name">
+        </div>
+        <div class="form-group col-md-6 inline-display">
+            <label for="lastScore">Last Score Percentage</label>
+            <input type="number" min="0" max="100" [readonly]="disabled" step="0.01" [(ngModel)]="student.lastScore"
+                name="lastScore" class="form-control" id="lastScore" placeholder="Enter Last Score Percentage">
+            <label *ngIf="scoreInvalid" class="error">The score is invalid</label>
+        </div>
+        <button type="submit" class="btn btn-primary"
+            [disabled]="disabled || !onboardingForm.form.valid">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,82 @@
+[{
+    "id": 1,
+    "name": "Sanjana Monga",
+    "dob": "1992-11-20",
+    "father": "Vijay Monga",
+    "mother": "Poonam Monga",
+    "category": 1,
+    "lastScore": "91",
+    "listOfDocs": [
+        {
+            "name": "Domicile Certificate",
+            "mandatory": true,
+            "isProvided": true
+        },
+        {
+            "name": "Birth Certificate",
+            "mandatory": true,
+            "isProvided": true
+        },
+        {
+            "name": "Previous Marksheet",
+            "mandatory": true,
+            "isProvided": true
+        },
+        {
+            "name": "Police Clearence",
+            "mandatory": false,
+            "isProvided": true
+        },
+        {
+            "name": "Signed Declaration",
+            "mandatory": true,
+            "isProvided": true
+        },
+        {
+            "name": "Passport",
+            "mandatory": false,
+            "isProvided": true
+        }
+    ]
+},
+{
+    "id": 2,
+    "name": "Nikita Bajaj",
+    "dob": "1993-10-18",
+    "father": "Umesh Bajaj",
+    "mother": "Geetanjli Bajaj",
+    "category": 2,
+    "lastScore": "91" ,
+    "listOfDocs": [
+        {
+            "name": "Domicile Certificate",
+            "mandatory": true,
+            "isProvided": true
+        },
+        {
+            "name": "Birth Certificate",
+            "mandatory": true,
+            "isProvided": true
+        },
+        {
+            "name": "Previous Marksheet",
+            "mandatory": true,
+            "isProvided": true
+        },
+        {
+            "name": "Police Clearence",
+            "mandatory": true,
+            "isProvided": true
+        },
+        {
+            "name": "Signed Declaration",
+            "mandatory": true,
+            "isProvided": true
+        },
+        {
+            "name": "Passport",
+            "mandatory": true,
+            "isProvided": true
+        }
+    ]  
+}]

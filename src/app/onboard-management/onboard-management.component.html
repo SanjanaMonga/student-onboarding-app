@@ -1,0 +1,14 @@
+<div class="padd_10 dashboard">
+    <ngb-tabset #tabSet="ngbTabset" (tabChange)="setRoute($event)">
+        <ngb-tab title="Student On Boarding Form" id="tab-1">
+            <ng-template ngbTabContent>
+                <app-student-onboarding-form></app-student-onboarding-form>
+            </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Student List" id="tab-2">
+            <ng-template ngbTabContent>
+                <app-student-list></app-student-list>
+            </ng-template>
+        </ngb-tab>
+    </ngb-tabset>
+</div>

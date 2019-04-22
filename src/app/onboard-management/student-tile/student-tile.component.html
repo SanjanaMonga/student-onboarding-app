@@ -1,0 +1,19 @@
+<div class="card" [ngClass]="student.category == StudentType.Domestic ? 'color-grey' : 'color-blue'">
+    <div class="card-body">
+        <h5 class="card-title">{{student.name}}
+            <span class="float-right"><span (click)="viewStudentOnboaringInfo()" title="View All Details">
+                    <fa-icon [icon]="view"></fa-icon>
+                </span>&nbsp;
+                <span title="Edit" (click)="editStudentOnboaringInfo()">
+                    <fa-icon [icon]="edit"></fa-icon>
+                </span>&nbsp;
+                <span title="Delete" (click)="deleteStudentOnboaringInfo()">
+                    <fa-icon [icon]="delete"></fa-icon>
+                </span></span>
+        </h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+            {{student.category == StudentType.Domestic ? 'Domestic' : 'International'}}</h6>
+        <div>Last Score : {{student.lastScore}}</div>
+
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<h1>On Board Application System
+    <span *ngIf="isLoggedIn" class="float-right admin">
+    <span>
+        <fa-icon [icon]="user"></fa-icon>
+        <span>{{userName | uppercase}}</span>
+    </span>
+    &nbsp; | &nbsp;
+    <span title="Logout" (click)="logout()">
+        <fa-icon [icon]="signOut"></fa-icon>
+    </span>
+    </span>
+</h1>
