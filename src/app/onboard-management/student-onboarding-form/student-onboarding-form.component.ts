@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Student } from 'src/app/shared/models/student';
 import { FormMode } from 'src/app/shared/enums/form-mode.eum';
-import { Form, NgForm, FormGroup, FormControl } from '@angular/forms';
+import { Form, NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { StudentService } from 'src/app/shared/services/student.service';
 import { StudentType } from 'src/app/shared/enums/student-type.enum';
@@ -67,7 +67,7 @@ export class StudentOnboardingFormComponent implements OnInit {
             });
         });
     }
-    
+
     public onSubmit(form: NgForm) {
         if (+form.controls['lastScore'].value > 100 || +form.controls['lastScore'].value < 0) {
             this.scoreInvalid = true;
