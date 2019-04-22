@@ -10,6 +10,6 @@ export class DocumentService {
     constructor(private _httpService: HttpService) {
     }
     getAllDocuments() {
-        return this._httpService.get('../assets/document-list.json');
+        return this._httpService.get('assets/document-list.json');
     }
 }

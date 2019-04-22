@@ -10,7 +10,7 @@ import { HttpService } from './shared/services/http.service';
 export class AppComponent implements OnInit {
   constructor(private _httpService: HttpService, private _helperService: HelperService) { }
   ngOnInit() {
-    this._httpService.get('../../assets/student-data.json').subscribe(data =>
+    this._httpService.get('assets/student-data.json').subscribe(data =>
       this._helperService.setItemToLocalStorage('students', data));
     this._helperService.removeItemFromLocalStorage('user');
   }
