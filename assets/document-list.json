@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Domicile Certificate",
+        "mandatory": [1,2]
+    },
+    {
+        "name": "Birth Certificate",
+        "mandatory": [1,2]
+    },
+    {
+        "name": "Previous Marksheet",
+        "mandatory": [1,2]
+    },
+    {
+        "name": "Police Clearence",
+        "mandatory": [2]
+    },
+    {
+        "name": "Signed Declaration",
+        "mandatory": [1,2]
+    },
+    {
+        "name": "Passport",
+        "mandatory": [2]
+    }
+]
